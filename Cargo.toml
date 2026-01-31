@@ -1,0 +1,13 @@
+[package]
+name = "factory-m8"
+version = "0.1.0"
+edition = "2021"
+description = "Core traits for test data factories with automatic FK resolution"
+license = "MIT"
+repository = "https://github.com/AcmeCorp/factory-m8"
+keywords = ["testing", "factory", "database", "fixtures"]
+categories = ["development-tools::testing"]
+readme = "README.md"
+
+[dependencies]
+async-trait = "0.1"
