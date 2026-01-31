@@ -78,8 +78,8 @@
 //! ```
 
 use async_trait::async_trait;
-// #[cfg(feature = "derive")]
-// pub use factory_m8_derive::Factory;
+#[cfg(feature = "derive")]
+pub use factory_m8_derive::Factory;
 use std::error::Error;
 
 // =============================================================================
