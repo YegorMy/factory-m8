@@ -1,6 +1,6 @@
 [package]
 name = "factory-m8"
-version = "1.0.0"
+version = "0.9.0"
 edition = "2024"
 description = "Core traits for test data factories with automatic FK resolution"
 license = "MIT"
@@ -9,5 +9,10 @@ keywords = ["testing", "factory", "database", "fixtures"]
 categories = ["development-tools::testing"]
 readme = "README.md"
 
+[features]
+default = []
+# derive = ["factory-m8-derive"]
+
 [dependencies]
 async-trait = "0.1"
+# factory-m8-derive = { version = "1", optional = true }

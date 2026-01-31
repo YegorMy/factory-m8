@@ -1,3 +1,6 @@
+#[cfg(feature = "derive")]
+pub use factory_m8_derive::Factory;
+
 //! Factory Core - Shared traits for test data factories
 //!
 //! This crate provides traits that factories implement to enable
