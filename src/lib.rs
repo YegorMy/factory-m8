@@ -1,6 +1,3 @@
-#[cfg(feature = "derive")]
-pub use factory_m8_derive::Factory;
-
 //! Factory Core - Shared traits for test data factories
 //!
 //! This crate provides traits that factories implement to enable
@@ -81,6 +78,8 @@ pub use factory_m8_derive::Factory;
 //! ```
 
 use async_trait::async_trait;
+// #[cfg(feature = "derive")]
+// pub use factory_m8_derive::Factory;
 use std::error::Error;
 
 // =============================================================================
@@ -138,33 +137,57 @@ pub trait Sentinel: Clone {
 // =============================================================================
 
 impl Sentinel for i64 {
-    fn sentinel() -> Self { 0 }
-    fn is_sentinel(&self) -> bool { *self == 0 }
+    fn sentinel() -> Self {
+        0
+    }
+    fn is_sentinel(&self) -> bool {
+        *self == 0
+    }
 }
 
 impl Sentinel for i32 {
-    fn sentinel() -> Self { 0 }
-    fn is_sentinel(&self) -> bool { *self == 0 }
+    fn sentinel() -> Self {
+        0
+    }
+    fn is_sentinel(&self) -> bool {
+        *self == 0
+    }
 }
 
 impl Sentinel for i16 {
-    fn sentinel() -> Self { 0 }
-    fn is_sentinel(&self) -> bool { *self == 0 }
+    fn sentinel() -> Self {
+        0
+    }
+    fn is_sentinel(&self) -> bool {
+        *self == 0
+    }
 }
 
 impl Sentinel for u64 {
-    fn sentinel() -> Self { 0 }
-    fn is_sentinel(&self) -> bool { *self == 0 }
+    fn sentinel() -> Self {
+        0
+    }
+    fn is_sentinel(&self) -> bool {
+        *self == 0
+    }
 }
 
 impl Sentinel for u32 {
-    fn sentinel() -> Self { 0 }
-    fn is_sentinel(&self) -> bool { *self == 0 }
+    fn sentinel() -> Self {
+        0
+    }
+    fn is_sentinel(&self) -> bool {
+        *self == 0
+    }
 }
 
 impl Sentinel for String {
-    fn sentinel() -> Self { String::new() }
-    fn is_sentinel(&self) -> bool { self.is_empty() }
+    fn sentinel() -> Self {
+        String::new()
+    }
+    fn is_sentinel(&self) -> bool {
+        self.is_empty()
+    }
 }
 
 /// Blanket implementation for `Option<T>`.
@@ -254,8 +277,12 @@ mod tests {
     struct TestId(i64);
 
     impl Sentinel for TestId {
-        fn sentinel() -> Self { TestId(0) }
-        fn is_sentinel(&self) -> bool { self.0 == 0 }
+        fn sentinel() -> Self {
+            TestId(0)
+        }
+        fn is_sentinel(&self) -> bool {
+            self.0 == 0
+        }
     }
 
     #[test]
